@@ -11,4 +11,7 @@ public interface ServerConfig extends Config {
     @Key("yandexTitle")
     String yandexTitle();
 
+    @Key("urlTele2")
+    String urlTele2();
+
 }

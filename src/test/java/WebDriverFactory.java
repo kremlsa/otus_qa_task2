@@ -10,17 +10,17 @@ import org.openqa.selenium.opera.OperaOptions;
 public class WebDriverFactory {
     protected static WebDriver driver;
 
-    public static WebDriver create(String webDriverName) {
-        switch (webDriverName.toLowerCase()) {
-            case "chrome":
+    public static WebDriver create(BrowserName browserName) {
+        switch (browserName) {
+            case CHROME:
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 break;
-            case "firefox":
+            case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
-            case "opera":
+            case OPERA:
                 WebDriverManager.operadriver().setup();
                 driver = new OperaDriver();
                 break;
@@ -28,17 +28,17 @@ public class WebDriverFactory {
         return driver;
     }
 
-    public static WebDriver create(String webDriverName, WebDriver.Options options) {
-        switch (webDriverName.toLowerCase()) {
-            case "chrome":
+    public static WebDriver create(BrowserName browserName, WebDriver.Options options) {
+        switch (browserName) {
+            case CHROME:
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver((ChromeOptions) options);
                 break;
-            case "firefox":
+            case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver((FirefoxOptions) options);
                 break;
-            case "opera":
+            case OPERA:
                 WebDriverManager.operadriver().setup();
                 driver = new OperaDriver((OperaOptions) options);
                 break;
